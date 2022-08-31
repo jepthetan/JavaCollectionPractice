@@ -1,5 +1,6 @@
 package com.thoughtworks.collection;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -13,14 +14,20 @@ public class StreamMap {
             "v", "w", "x", "y", "z");
 
     public List<Integer> getTriple(List<Integer> numbers) {
-        return null;
+
+        return numbers.stream().map(number -> number*3).collect(Collectors.toList());
+
     }
 
     public List<String> mapLetter(List<Integer> numbers) {
-        return null;
+
+        return numbers.stream().map(number -> ALPHABET.get(numbers.indexOf(number))).collect(Collectors.toList());
+
     }
 
     public List<Integer> mapLength(List<String> words) {
-        return null;
+
+        return words.stream().map(word -> word.length()).collect(Collectors.toList());
+
     }
 }
